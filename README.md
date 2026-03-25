@@ -68,8 +68,8 @@ pnpm dev
 
 This will start:
 - **Frontend**: http://localhost:5173 (Vite dev server)
-- **Backend**: http://localhost:3001 (NestJS server)
-- **GraphQL Playground**: http://localhost:3001/graphql
+- **Backend**: http://localhost:3004 (NestJS server)
+- **GraphQL Playground**: http://localhost:3004/graphql
 
 **Expected Output:**
 ```
@@ -85,7 +85,7 @@ PNPM  Concurrently running 2 processes...
 [server] [NestFactory] Starting Nest application...
 [server] [InstanceLoader] GraphQLModule dependencies initialized
 [server] [GraphQLModule] Mapped {/graphql, POST}
-[server] Nest application successfully started on port 3001
+[server] Nest application successfully started on port 3004
 ```
 
 #### Option 2: Run Client and Server Separately
@@ -97,7 +97,7 @@ If you need to run them in separate terminals:
 pnpm --filter server run dev:server
 ```
 
-Expected: Server runs on `http://localhost:3001`
+Expected: Server runs on `http://localhost:3004`
 
 **Terminal 2 - Start the Frontend Client:**
 ```bash
@@ -111,4 +111,4 @@ Expected: Client runs on `http://localhost:5173`
 Once both the client and server are running:
 
 - **Frontend Application**: Open your browser and navigate to [http://localhost:5173](http://localhost:5173)
-- **GraphQL Playground**: Visit [http://localhost:3001/graphql](http://localhost:3001/graphql) to explore the GraphQL API
+- **GraphQL Playground**: Visit [http://localhost:3004/graphql](http://localhost:3004/graphql) to explore the GraphQL API
