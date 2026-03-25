@@ -50,12 +50,12 @@ Check that everything installed correctly:
 ```bash
 # Verify pnpm workspaces are recognized
 pnpm list -r --depth=0
-
-# This should show three packages:
-# - google-forms-lite (root)
-# - client
-# - server
 ```
+
+This command should display all workspace dependencies. You should see output listing:
+- **client** workspace with its dependencies (React, Redux Toolkit, testing libraries, etc.)
+- **server** workspace with its dependencies (NestJS, Apollo, GraphQL, etc.)
+- A summary showing "X packages in 3 projects" at the bottom
 
 ### Running the Application
 
