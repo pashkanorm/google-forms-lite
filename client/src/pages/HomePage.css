@@ -39,6 +39,8 @@
   flex-direction: column;
   align-items: center;
   width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .create-form-button {
@@ -89,7 +91,7 @@
 
 .forms-list-container {
   width: 100%;
-  padding: 48px 20px;
+  padding: 48px 12px;
   box-sizing: border-box;
   margin: 0;
   border: none;
@@ -97,9 +99,10 @@
 }
 
 .forms-container {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   width: 100%;
+  max-width: 1280px;
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
@@ -108,7 +111,7 @@
 
 .forms-container h2 {
   margin-bottom: 16px;
-  color: #673AB7;
+  color: #474747;
   text-align: left;
   width: 100%;
   font-size: 28px;

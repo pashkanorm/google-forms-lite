@@ -26,7 +26,7 @@ const FormCard: React.FC<FormCardProps> = ({
         <p className="form-card-description">{description || <em>No description</em>}</p>
         <div className="form-card-actions">
           <button onClick={onViewForm} className="btn-primary">
-            Fill Form
+            View Form
           </button>
           <button onClick={onViewResponses} className="btn-secondary">
             View Responses ({responseCount})
