@@ -1,0 +1,128 @@
+.responses-container-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.question-responses-section {
+  background: white;
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.question-responses-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.question-responses-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #673AB7;
+}
+
+.question-responses-count {
+  font-size: 14px;
+  color: #999;
+  font-weight: 500;
+}
+
+.question-responses-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.answers-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.answer-option-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.answer-option-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.option-text {
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+}
+
+.option-count {
+  font-size: 13px;
+  color: #999;
+  font-weight: 500;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #673AB7;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.answers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.answer-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  background: #f9f9f9;
+  border-radius: 4px;
+  border-left: 3px solid #673AB7;
+}
+
+.answer-text {
+  flex: 1;
+  color: #333;
+  font-size: 14px;
+  word-break: break-word;
+  line-height: 1.5;
+}
+
+.no-responses {
+  text-align: center;
+  padding: 40px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  color: #999;
+}
+
+@media (max-width: 600px) {
+  .responses-table th,
+  .responses-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .response-value {
+    max-width: 150px;
+  }
+}

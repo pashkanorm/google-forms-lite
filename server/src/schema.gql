@@ -1,0 +1,68 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type QuestionModel {
+  id: ID!
+  text: String!
+  type: String!
+  options: [String!]
+}
+
+type FormModel {
+  id: ID!
+  title: String!
+  description: String
+  questions: [QuestionModel!]!
+  responseCount: Float
+}
+
+type AnswerModel {
+  questionId: String!
+  value: String!
+}
+
+type ResponseModel {
+  formId: String!
+  answers: [AnswerModel!]!
+}
+
+type Query {
+  forms: [FormModel!]!
+  form(id: ID!): FormModel
+  responses(formId: ID!): [ResponseModel!]!
+}
+
+type Mutation {
+  createForm(input: CreateFormInput!): FormModel!
+  submitResponse(input: SubmitResponseInput!): ResponseModel!
+}
+
+input CreateFormInput {
+  title: String!
+  description: String
+  questions: [QuestionInput!]
+}
+
+input QuestionInput {
+  text: String!
+  type: QuestionType!
+  options: [String!]
+}
+
+enum QuestionType {
+  TEXT
+  MULTIPLE_CHOICE
+  CHECKBOX
+  DATE
+}
+
+input SubmitResponseInput {
+  formId: ID!
+  answers: [AnswerInput!]!
+}
+
+input AnswerInput {
+  questionId: String!
+  value: String!
+}
