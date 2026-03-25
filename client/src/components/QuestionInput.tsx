@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { QuestionType } from '../../../shared/types';
 import './QuestionInput.css';
+
+const TEXT_LIMIT = 2000;
 
 interface QuestionInputProps {
   questionId: string;
@@ -24,18 +26,49 @@ const QuestionInput: React.FC<QuestionInputProps> = ({
   isCheckboxSelected,
   isUnanswered = false,
 }) => {
+  const [isLimitReached, setIsLimitReached] = useState(false);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  const resizeTextarea = (textarea: HTMLTextAreaElement) => {
+    const minHeight = '24px';
+    textarea.style.height = minHeight;
+    const scrollHeight = textarea.scrollHeight;
+    const minHeightNum = parseInt(minHeight);
+    if (scrollHeight > minHeightNum) {
+      textarea.style.height = scrollHeight + 'px';
+    }
+  };
+
+  useEffect(() => {
+    if (type === QuestionType.TEXT && textareaRef.current) {
+      resizeTextarea(textareaRef.current);
+    }
+  }, [value, type]);
+
+  const handleTextChange = (newValue: string) => {
+    if (newValue.length <= TEXT_LIMIT) {
+      onChange(newValue);
+      setIsLimitReached(false);
+    } else {
+      setIsLimitReached(true);
+    }
+  };
+
   return (
     <div className="question-input">
       <label className="question-label">{text}{isUnanswered && <span className="unanswered-asterisk"> *</span>}</label>
 
       {type === QuestionType.TEXT && (
-        <input
-          type="text"
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          className="question-text-input"
-          placeholder="Your answer"
-        />
+        <div>
+          <textarea
+            ref={textareaRef}
+            value={value}
+            onChange={(e) => handleTextChange(e.target.value)}
+            className="question-text-input"
+            placeholder="Your answer"
+          />
+          {isLimitReached && <div className="text-limit-message">Text limit reached</div>}
+        </div>
       )}
 
       {type === QuestionType.DATE && (

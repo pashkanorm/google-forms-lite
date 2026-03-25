@@ -16,10 +16,39 @@
   color: #d32f2f;
 }
 
+.text-limit-message {
+  color: #d32f2f;
+  font-size: 14px;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
 .question-text-input,
 .question-date-input {
   width: 100%;
   max-width: 400px;
+}
+
+.question-text-input {
+  border: 1px solid #ddd;
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #333;
+  background-color: #ffffff;
+  resize: none;
+  overflow: hidden;
+  height: auto;
+  min-height: 24px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.question-text-input:focus {
+  outline: none;
+  border-color: #673AB7;
 }
 
 .date-input-wrapper {
@@ -40,6 +69,11 @@
   border-radius: 4px;
   display: block;
   box-sizing: border-box;
+}
+
+.date-input-wrapper .question-date-input:focus {
+  outline: none;
+  border-color: #673AB7;
 }
 
 .calendar-icon {
