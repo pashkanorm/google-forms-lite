@@ -22,7 +22,7 @@ Before you begin, ensure you have the following installed:
 
 ```bash
 # Clone the repository to your local machine
-git clone <repository-url>
+git clone github.com/pashkanorm/google-forms-lite
 cd google-forms-lite
 ```
 
